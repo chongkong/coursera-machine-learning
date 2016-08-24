@@ -6,6 +6,7 @@ function g = sigmoidGradient(z)
 %   vector. In particular, if z is a vector or matrix, you should return
 %   the gradient for each element.
 
-g = z .* (1 - z);
+sigZ = sigmoid(z);
+g = sigZ .* (1 - sigZ);
 
 end

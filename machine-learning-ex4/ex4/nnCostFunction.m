@@ -60,8 +60,8 @@ end
 
 % Apply regularization term
 J = J + lambda / (2 * m) * (sum(Theta1_(:) .^ 2) + sum(Theta2_(:) .^ 2));
-Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + lambda * Theta1_;
-Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + lambda * Theta2_;
+Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + lambda * Theta1_ / m;
+Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + lambda * Theta2_ / m;
 
 % Unroll gradients
 grad = [Theta1_grad(:) ; Theta2_grad(:)];
