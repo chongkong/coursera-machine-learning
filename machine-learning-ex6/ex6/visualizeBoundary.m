@@ -13,12 +13,12 @@ x2plot = linspace(min(X(:,2)), max(X(:,2)), 100)';
 vals = zeros(size(X1));
 for i = 1:size(X1, 2)
    this_X = [X1(:, i), X2(:, i)];
-   vals(:, i) = svmPredict(model, this_X);
+   [~, vals(:, i)] = svmPredict(model, this_X);
 end
 
 % Plot the SVM boundary
 hold on
-contour(X1, X2, vals, [0 0], 'Color', 'b');
+contour(X1, X2, vals, [0, 0], 'Color', 'b');
 hold off;
 
 end
